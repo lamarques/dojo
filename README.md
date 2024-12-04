@@ -1,3 +1,4 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=lamarques_dojo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=lamarques_dojo)
 # PHP Dojo Template
 
 Este é um template básico para um dojo de desenvolvimento em PHP com PHPUnit, incluindo um ambiente Docker.
