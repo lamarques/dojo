@@ -42,9 +42,6 @@ jobs:
       - name: Install Composer Dependencies for SonarQube
         run: composer install --no-interaction --prefer-dist
 
-      - name: Debug SONAR_TOKEN
-        run: echo ${{ secrets.SONAR_TOKEN }}
-
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
