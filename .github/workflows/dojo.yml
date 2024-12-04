@@ -23,5 +23,11 @@ jobs:
       - name: Install Composer Dependencies
         run: composer install --no-interaction --prefer-dist
 
+      - name: List Project Files
+        run: ls -la
+
+      - name: List Test Files
+        run: ls -la tests
+
       - name: Run PHPUnit Tests
         run: composer test
