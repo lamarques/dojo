@@ -1,6 +1,9 @@
 {
   "name": "dojo/php-template",
   "description": "Template para um dojo de desenvolvimento em PHP com PHPUnit",
+  "type": "project",
+  "license": "MIT",
+  "version": "1.0.0",
   "require-dev": {
     "phpunit/phpunit": "^10.0"
   },
@@ -15,5 +18,8 @@
     }
   },
   "minimum-stability": "stable",
-  "require": {}
+  "require": {},
+  "scripts": {
+    "test": "vendor/bin/phpunit --configuration ./phpunit.xml"
+  }
 }
