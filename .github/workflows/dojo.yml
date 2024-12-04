@@ -47,5 +47,5 @@ jobs:
         with:
           entryPoint: "./vendor/bin/sonar-scanner"
           args: "-Dsonar.projectKey=lamarques_dojo -Dsonar.organization=lamarques -Dsonar.sources=src -Dsonar.php.coverage.reportPaths=coverage.xml"
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        env: 
+          SONAR_TOKEN: ${{ env.SONAR_TOKEN }}
