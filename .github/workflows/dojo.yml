@@ -42,10 +42,13 @@ jobs:
       - name: Install Composer Dependencies for SonarQube
         run: composer install --no-interaction --prefer-dist
 
+      - name: Debug SONAR_TOKEN
+        run: echo ${{ secrets.SONAR_TOKEN }}
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           entryPoint: "./vendor/bin/sonar-scanner"
           args: "-Dsonar.projectKey=lamarques_dojo -Dsonar.organization=lamarques -Dsonar.sources=src -Dsonar.php.coverage.reportPaths=coverage.xml"
         env: 
-          SONAR_TOKEN: ${{ env.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
