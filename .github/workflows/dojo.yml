@@ -21,7 +21,7 @@ jobs:
           extensions: pdo, pdo_mysql
 
       - name: Install Composer Dependencies
-        run: composer install
+        run: composer install --no-interaction --prefer-dist
 
       - name: Run PHPUnit Tests
-        run: vendor/bin/phpunit
+        run: vendor/bin/phpunit --testdox --debug
