@@ -26,26 +26,15 @@ jobs:
       - name: Run PHPUnit Tests
         run: composer test
 
-  sonar-analysis:
+  sonarcloud:
+    name: SonarQube Cloud
     runs-on: ubuntu-latest
-    needs: dojo-tests
-
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup PHP for SonarQube
-        uses: shivammathur/setup-php@v2
+      - uses: actions/checkout@v4
         with:
-          php-version: '8.4'
-
-      - name: Install Composer Dependencies for SonarQube
-        run: composer install --no-interaction --prefer-dist
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v2
-        with:
-          entryPoint: "./vendor/bin/sonar-scanner"
-          args: "-Dsonar.projectKey=lamarques_dojo -Dsonar.organization=lamarques -Dsonar.sources=src -Dsonar.php.coverage.reportPaths=coverage.xml"
-        env: 
+          fetch-depth: 0
+      - name: SonarQube Cloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
