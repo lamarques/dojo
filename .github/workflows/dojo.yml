@@ -17,6 +17,6 @@ jobs:
         php-version: '8.0'
     - uses: actions/checkout@v4
     - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer install
     - name: Execute tests PHPUnit
       run: ./vendor/bin/phpunit
